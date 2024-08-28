@@ -14,7 +14,7 @@ export class ResultCardComponent {
     private getCurrencyString(amount: number) {
         return amount.toLocaleString("en-US", {
             style: "currency",
-            currency: "USD",
+            currency: "GBP",
         });
     }
 
