@@ -71,6 +71,7 @@ form {
 
 @media (max-width: 500px) {
     form {
+        padding: 2rem 1rem;
         .inputs {
             grid-template-columns: 1fr;
         }
