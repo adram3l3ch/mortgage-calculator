@@ -1,0 +1,19 @@
+@import "../styles/theme";
+
+main {
+    border-radius: 0.5rem;
+    background-color: $neutral;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 60rem;
+    overflow: hidden;
+    box-shadow: 0 10px 50px -30px $neutral-300;
+}
+
+@media (max-width: 850px) {
+    main {
+        grid-template-columns: 1fr;
+        border-radius: 0;
+    }
+}

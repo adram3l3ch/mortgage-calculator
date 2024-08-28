@@ -1,7 +1,32 @@
+@import "./styles/theme";
+
 *,
 *::after,
 *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+:root {
+    font-size: 16px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    background-color: $neutral-100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    padding: 2rem;
+}
+
+@media (max-width: 850px) {
+    body {
+        padding: 0;
+    }
 }

@@ -1,0 +1,18 @@
+<section>
+    @if (showResults) {
+    <article class="result">
+        <h2>Your results</h2>
+        <p>
+            Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments”
+            again.
+        </p>
+        <app-result-card />
+    </article>
+    }@else {
+    <article class="empty">
+        <img src="illustration-empty.svg" alt="results" />
+        <h2>Results shown here</h2>
+        <p>Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
+    </article>
+    }
+</section>

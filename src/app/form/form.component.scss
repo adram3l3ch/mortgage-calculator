@@ -1,0 +1,80 @@
+@import "../../styles/theme";
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $neutral-900;
+        }
+
+        button {
+            border: none;
+            font-family: inherit;
+            background: none;
+            color: $neutral-700;
+            text-decoration: underline;
+            cursor: pointer;
+
+            &:hover {
+                color: $neutral-900;
+            }
+        }
+    }
+
+    .inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+
+        :first-child,
+        :last-child {
+            grid-column: 1/-1;
+        }
+    }
+
+    button[type="submit"] {
+        background-color: $primary-lime;
+        padding: 0.75rem 2rem;
+        border-radius: 100vmax;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 1rem;
+        color: $neutral-900;
+        align-self: flex-start;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    form {
+        .inputs {
+            grid-template-columns: 1fr;
+        }
+        button[type="submit"] {
+            align-self: stretch;
+        }
+    }
+}

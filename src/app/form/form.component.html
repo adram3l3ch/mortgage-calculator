@@ -1,0 +1,48 @@
+<form (ngSubmit)="onSubmit()">
+    <header>
+        <h1>Mortgage Calculator</h1>
+        <button (click)="onClear()" type="button">Clear All</button>
+    </header>
+    <div class="inputs">
+        <app-input
+            name="amount"
+            label="Mortgage Amount"
+            preText="$"
+            type="number"
+            [(value)]="formValues.amount"
+            [error]="errors.amount"
+            (valueChange)="onValueChange()"
+        />
+        <app-input
+            name="term"
+            label="Mortgage Term"
+            postText="years"
+            type="number"
+            [(value)]="formValues.term"
+            [error]="errors.term"
+            (valueChange)="onValueChange()"
+        />
+        <app-input
+            name="interest"
+            label="Interest Rate"
+            postText="%"
+            type="number"
+            [(value)]="formValues.interest"
+            [error]="errors.interest"
+            (valueChange)="onValueChange()"
+        />
+        <app-input
+            name="type"
+            label="Mortgage Type"
+            type="radio"
+            [radioOptions]="radioOptions"
+            [(value)]="formValues.type"
+            [error]="errors.type"
+            (valueChange)="onValueChange()"
+        />
+    </div>
+    <button type="submit">
+        <img src="icon-calculator.svg" alt="calculator" />
+        Calculate Repayments
+    </button>
+</form>

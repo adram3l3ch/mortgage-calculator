@@ -1,0 +1,22 @@
+<div class="wrapper">
+    @if(!!label()){
+    <label [for]="name()">{{ label() }}</label>
+    } @if (type()!=="radio") {
+    <div>
+        @if (preText()) {
+        <span>{{ preText() }}</span>
+        }
+        <input [id]="name()" [placeholder]="placeholder()" [(ngModel)]="value" [type]="type()" (ngModelChange)="onValueChange($event)" />
+        @if (postText()) {
+        <span>{{ postText() }}</span>
+        }
+    </div>
+    } @else { @for (option of radioOptions(); track option.id) {
+    <div>
+        <input [id]="name() + option.id" type="radio" (change)="onValueChange(option.id)" [name]="name()" [checked]="option.id === value" />
+        <label [for]="name() + option.id">{{ option.value }}</label>
+    </div>
+    } } @if (error()) {
+    <p class="error">{{ error() }}</p>
+    }
+</div>
