@@ -12,10 +12,42 @@ import { formSchema } from "./form.schema";
     styleUrl: "./form.component.scss",
 })
 export class FormComponent {
-    radioOptions = [
-        { id: "repayment", value: "Repayment" },
-        { id: "interest", value: "Interest Only" },
-    ];
+    readonly inputs = [
+        {
+            name: "amount",
+            label: "Mortgage Amount",
+            preText: "£",
+            type: "number",
+        },
+        {
+            name: "term",
+            label: "Mortgage Term",
+            postText: "years",
+            type: "number",
+        },
+        {
+            name: "interest",
+            label: "Interest Rate",
+            postText: "%",
+            type: "number",
+        },
+        {
+            name: "type",
+            label: "Mortgage Type",
+            type: "radio",
+            options: [
+                { id: "repayment", value: "Repayment" },
+                { id: "interest", value: "Interest Only" },
+            ],
+        },
+    ] as {
+        name: "amount" | "term" | "interest" | "type";
+        label: string;
+        type: "radio" | "number";
+        options?: { id: string; value: string }[];
+        preText?: string;
+        postText?: string;
+    }[];
 
     private resultsService = inject(ResultsService);
 
